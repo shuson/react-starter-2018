@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import Layout from './Layout';
+import Layout from '../layouts/Layout';
 
 const DynamicPage = () => {
+  let today = "abc";
+  today += "DEF";
   return (
     <Layout>
-      <Header as="h2">Dynamic Page</Header>
+      <h2>Dynamic Page</h2>
       <p>This page was loaded asynchronously!!!</p>
       <Link to="/">back</Link>
     </Layout>

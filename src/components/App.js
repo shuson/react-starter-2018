@@ -2,17 +2,11 @@ import React from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import importedComponent from 'react-imported-component';
 
-import Home from './Home';
+import HomeView from './Home/HomeView';
 import Loading from './Loading';
 
-const AsyncDynamicPAge = importedComponent(
-  () => import(/* webpackChunkName:'DynamicPage' */ './DynamicPage'),
-  {
-    LoadingComponent: Loading
-  }
-);
-const AsyncNoMatch = importedComponent(
-  () => import(/* webpackChunkName:'NoMatch' */ './NoMatch'),
+const AsyncChild1 = importedComponent(
+  () => import('./Child1'),
   {
     LoadingComponent: Loading
   }
@@ -23,9 +17,8 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/dynamic" component={AsyncDynamicPAge} />
-          <Route component={AsyncNoMatch} />
+          <Route exact path="/" component={HomeView} />
+          <Route exact path="/child1" component={AsyncChild1} />
         </Switch>
       </div>
     </Router>

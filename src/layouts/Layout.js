@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Container, Divider, Icon } from 'semantic-ui-react';
 
-import { pullRight, h1 } from './layout.css';
+import './layout.scss';
 
 const Layout = ({ children }) => {
   return (
-    <Container>
+    <div>
       <Link to="/">
-        <Header as="h1" className={h1}>
+        <h1 className='text-center'>
           react-starter-2018
-        </Header>
+        </h1>
       </Link>
       {children}
-    </Container>
+    </div>
   );
 };
 
