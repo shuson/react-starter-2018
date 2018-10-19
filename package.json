@@ -1,53 +1,105 @@
 {
   "name": "react-starter-2018",
-  "version": "1.0.0",
-  "description": "React starter updated with 2018 tools",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "react starter",
+  "main": "src/index.js",
   "author": "Sam Wang",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --env.env=dev",
+    "start": "cross-env NODE_ENV=dev && node_modules/.bin/webpack-dev-server --env.mode=dev --config build/webpack.config.js",
     "dev": "yarn start --env.addons=bundleanalyzer",
+    "lint": "eslint src/**/*.js --ignore-pattern '/test.js/'",
     "clean": "rimraf dist",
-    "build": "yarn clean && cross-env NODE_ENV=production webpack -p --env.env=prod",
-    "deploy": "yarn build --env.addons=bundleanalyzer"
+    "test": "ava --tap | tap-difflet",
+    "coverage": "nyc ava --tap | tap-difflet",
+    "build": "cross-env NODE_ENV=production webpack -p --env.mode=prod --config build/webpack.config.js",
+    "deploy": "yarn build --env.addons=bundleanalyzer",
+    "generate": "plop --plopfile build/generators/index.js"
+  },
+  "ava": {
+    "files": "src/**/*.test.js",
+    "tap": true,
+    "require": [
+      "babel-core/register"
+    ],
+    "babel": {
+      "testOptions": {
+        "babelrc": false,
+        "presets": [
+          "@babel/preset-react"
+        ]
+      }
+    }
   },
   "dependencies": {
-    "file-loader": "^1.1.11",
-    "node-sass": "^4.8.3",
+    "animate.css": "^3.7.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "classnames": "^2.2.6",
+    "connected-react-router": "^4.5.0",
+    "deep-equal": "^1.0.1",
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.7.0",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
     "normalize.css": "^8.0.0",
-    "react": "^16.2.0",
-    "react-delay-render": "^0.1.2",
-    "react-dom": "^16.2.0",
-    "react-imported-component": "^4.2.1",
-    "react-prop-types": "^0.4.0",
-    "react-router-dom": "^4.2.2",
-    "url-loader": "^1.0.1"
+    "popper.js": "^1.14.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-deep-force-update": "^2.1.3",
+    "react-dom": "^16.5.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.0",
+    "react-router-dom": "^4.3.0",
+    "reactstrap": "^6.4.0",
+    "redbox-react": "^1.6.0",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-promise-middleware": "^5.1.0",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "chalk": "^2.3.2",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/plugin-transform-arrow-functions": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^9.1.0",
+    "ava": "^1.0.0-beta.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "chalk": "^2.4.1",
+    "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.6.0",
+    "eslint": "^5.6.0",
+    "eslint-plugin-react": "^7.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.1.0",
-    "postcss-loader": "^2.1.3",
-    "react-hot-loader": "^4.0.0",
+    "node-sass": "^4.8.3",
+    "nyc": "^13.0.0",
+    "plop": "^2.1.0",
+    "postcss-loader": "^3.0.0",
+    "react-hot-loader": "^4.3.11",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "webpack": "^4.3.0",
+    "tap-difflet": "^0.7.1",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.20.0",
     "webpack-bundle-analyzer": "^2.11.1",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.9",
     "webpack-merge": "^4.1.2"
-  },
-  "peerDependencies": {
-    "node-sass": "~4.8.3"
   },
   "repository": {
     "type": "git",
@@ -55,6 +107,9 @@
   },
   "bugs": {
     "url": "https://github.com/shuson/react-starter-2018/issues"
+  },
+  "engines": {
+    "node": ">=6.12.0 <7 || >=8.9.0"
   },
   "keywords": [
     "react 16",

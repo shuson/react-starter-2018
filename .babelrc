@@ -1,4 +1,11 @@
 {
-  "presets": [["env", { "modules": false }], "react", "stage-2"],
-  "plugins": ["react-hot-loader/babel"]
+  "presets": [
+    ["@babel/preset-env", { "modules": false }], 
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+  ]
 }

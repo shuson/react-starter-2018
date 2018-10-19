@@ -1,15 +1,6 @@
-# react-starter-2018
-
-> React Starter with updated tools in 2018
-
-## Features
-
-* React 16
-* React Router 4
-* Webpack 4
-* Code splitting by Route and Vendor
-* [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
-* Take a look at [package.json](https://github.com/shuson/react-starter-2018/blob/master/package.json)
+# React Starter
+Yet another react eco starter using babel 7, react 16, react router dom 4, eslint, webpack 4, ava+nyc
+bootstrap, font awesome, etc
 
 ### Usage
 
@@ -47,4 +38,9 @@ Run on the production oprimized build
 
 ```
 $ yarn deploy
+```
+## Generate Page or Component
+
+```
+$ yarn generate
 ```

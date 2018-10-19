@@ -1,0 +1,38 @@
+@import '~bootstrap/scss/variables';
+
+// Typography
+$font-family-base: 'Open Sans', sans-serif;
+$font-size-initial:       13px; 
+$font-size-base:          1rem !default;
+$font-size-lg:            1.25rem !default;
+$font-size-sm:            0.875rem !default;
+$font-size-larger:        1.1rem;
+$font-size-mini:          0.9rem;
+$font-size-index:         0.7rem;
+
+// Color system
+$body-bg: #adb5bd !default;
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #dfdfdf !default;
+$gray-300: #eee !default;
+$gray-400: #ddd !default;
+$gray-500: #adb5bd !default;
+$gray-600: #777 !default;
+$gray-700: #555 !default;
+$gray-800: #343434 !default;
+$gray-900: #242424 !default;
+$black: #000 !default;
+
+$blue: #5d8fc2 !default;
+$red: #dd5826 !default;
+$yellow: #f0b518 !default;
+$green: #64bd63 !default;
+$cyan: #5dc4bf !default;
+
+// animate
+$sidebar-transition-time: 300;
+$sidebar-width-open: 200px;
+$sidebar-width-closed: 100px;
+
+$content-padding: 5px;
