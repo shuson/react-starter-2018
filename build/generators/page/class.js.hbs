@@ -1,0 +1,35 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+
+import style from './index.scss'
+
+class {{ properCase name }} extends {{{ type }}} { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
+}
+
+{{ properCase name }}.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+function mapStateToProps(state, ownProps = {}) {
+  return {
+    
+  }
+};
+
+function mapDispatchToProps(dispatch, ownProps = {}) {
+  return {
+    dispatch,
+  };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)({{ properCase name }});
