@@ -3,13 +3,12 @@ import { BrowserRouter as Router, Switch, Route, Redirect, Link } from 'react-ro
 import Home from '../pages/home'
 
 const RouteOne = () => <div>
-  I am Route One
-
+  <p>I am Route One</p>
   <Link to={"/"}>Back </Link>
 </div>
 
 const RouteTwo = () => <div>
-  I am Route Two
+  <p>I am Route Two</p>
   <Link to={"/"}>Back </Link>
 </div>
 
@@ -17,9 +16,10 @@ export default () => {
   const routes = (
     <Router>
       <Switch>
-        <Route exect path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/route1" component={RouteOne} />
         <Route path="/route2" component={RouteTwo} />
+        <Route render={() => (<div>404</div>)} />
       </Switch>
     </Router>
   )
