@@ -1,0 +1,89 @@
+.accordion {
+  text-align: center;
+  cursor: pointer;
+  padding: 15px 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  transition: 0.4s;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid #233c56; 
+
+  a {
+    color: #76838f;
+    display: block; }
+  
+  i {
+    font-size: 20px;
+    vertical-align: middle;
+    color: #76838f;
+    margin-bottom: 3px; }
+  
+  span {
+    color: #76838f;
+  }
+}
+
+.accordionCollaps {
+  @extend .accordion;
+  
+  .parentText {
+    display: none;
+  }
+}
+
+.active, .accordion:hover {
+  background-color: #4776a2;
+  a {
+    text-decoration: none;
+  }
+
+  i {
+    -webkit-text-fill-color: #33a9de;
+  }
+
+  span {
+    color: #fff !important;
+  }
+}
+
+.accordion:hover {
+  .subMenu {
+    display: block;
+    text-align: center;
+    min-width: 140px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    transition: width 0.5s;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid #233c56;
+    position: fixed;
+    background: #233c56;
+    transition-timing-function: linear;
+
+    li {
+      padding: 8px 5px;
+
+      a {
+        color: #76838f;
+      }
+    }
+
+    li:hover {
+      background-color: #4776a2;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.subMenu {
+  display: none;
+}
+

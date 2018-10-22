@@ -1,0 +1,48 @@
+/*
+* Sidebar.scss scoped style
+*/
+
+.wrapper {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  float: left;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: #1c3145;
+  z-index: 100;
+
+  .sidebarHeader {
+    color: #fff;
+    text-align: center;
+    padding-top: 0.6rem; 
+    cursor: pointer;
+    height: 4em;
+
+    img {
+      margin-bottom: 5px; 
+    }
+  }
+
+  .menuToggle {
+    padding: 3px 5px;
+    font-size: 8px;
+    color: #fff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: 1px solid #f2f4f6;
+    border-right: 0;
+    align-self: flex-end;
+  }
+}
+
+.wrapperCollaps {
+  flex: 1;
+}
+
+.accordionList {
+  padding: 33px 0; 
+  text-align: center;
+  list-style-type: none;
+}
