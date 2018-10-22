@@ -1,0 +1,20 @@
+.wrapper {
+  position: fixed;
+  display: flex;
+  align-items: stretch;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  .content {
+    display: flex;
+    flex: 15;
+    flex-direction: column;
+
+    .routedContent {
+      display: flex;
+      overflow-y: auto;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/*
+* Topbar scoped styles
+*/
+
+.wrapper {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 4em;
+  background: rgb(28, 49, 69);
+  color: rgb(255, 255, 255);
+  z-index: 101;
+}

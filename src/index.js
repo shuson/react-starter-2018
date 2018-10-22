@@ -10,7 +10,7 @@ import deepForceUpdate from 'react-deep-force-update';
 import { createBrowserHistory } from 'history'
 import configureStore from './redux/store/configureStore';
 import sagas from './sagas';
-import {appRoutes } from './routes';
+import App from './pages'
 
 import './styles/global.scss';
 
@@ -26,7 +26,7 @@ store.runSaga(sagas);
 let appInstance = ReactDOM.render(
   <Provider store={store} persistor={persistor} >
     <ConnectedRouter history={history}>
-      {appRoutes() }
+      <App />
     </ConnectedRouter>
   </Provider>,
   container
