@@ -6,21 +6,28 @@
   "author": "Sam Wang",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev && node_modules/.bin/webpack-dev-server --env.mode=dev --config build/webpack.config.js",
+    "start": "cross-env NODE_ENV=dev && node_modules/.bin/webpack-dev-server --env.mode=dev --config bin/webpack.config.js",
     "dev": "yarn start --env.addons=bundleanalyzer",
     "lint": "eslint src/**/*.js --ignore-pattern '/test.js/'",
     "clean": "rimraf dist",
     "test": "ava --tap | tap-difflet",
     "coverage": "nyc ava --tap | tap-difflet",
-    "build": "cross-env NODE_ENV=production webpack -p --env.mode=prod --config build/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack -p --env.mode=prod --config bin/webpack.config.js",
     "deploy": "yarn build --env.addons=bundleanalyzer",
-    "generate": "plop --plopfile build/generators/index.js"
+    "generate": "plop --plopfile bin/generators/index.js"
   },
   "ava": {
-    "files": "src/**/*.test.js",
+    "files": [
+      "src/**/*.test.js",
+      "!node_modules/**/*"
+    ],
     "tap": true,
     "require": [
-      "babel-core/register"
+      "esm",
+      "ignore-styles",
+      "@babel/polyfill",
+      "@babel/register",
+      "./enzyme-adapter-setup"
     ],
     "babel": {
       "testOptions": {
@@ -70,9 +77,10 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-3": "^7.0.0",
     "@babel/register": "^7.0.0",
     "autoprefixer": "^9.1.0",
-    "ava": "^1.0.0-beta.3",
+    "ava": "^1.0.0-rc.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "chalk": "^2.4.1",
@@ -80,11 +88,14 @@
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^5.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "esm": "^3.0.84",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.1.0",
+    "ignore-styles": "^5.0.1",
     "node-sass": "^4.8.3",
     "nyc": "^13.0.0",
     "plop": "^2.1.0",

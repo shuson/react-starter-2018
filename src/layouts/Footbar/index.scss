@@ -1,0 +1,14 @@
+/*
+* Footbar scoped styles
+*/
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 2rem;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  align-self: flex-end;
+}

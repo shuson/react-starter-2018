@@ -1,0 +1,70 @@
+/*
+* Dropdown scoped styles
+*/
+
+.wrapper {
+  text-align: left;
+  display: inline-block;
+
+  .dropdownBtn {
+    border-radius: 16px;
+    padding: 2px 12px;
+    border: 1px solid #36aece;
+    cursor: pointer;
+  }
+
+  .dotIndicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 9px;
+
+    .purple {
+      background: purple;
+    }
+    .green {
+      background: palegreen;
+    }
+    .red {
+      background: orangered !important;
+    }
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    min-width: auto;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.5);
+    padding: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+  }
+
+  .dropdownItem {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .dropdownItem:hover {
+    background-color: lightgrey;
+  }
+}

@@ -1,0 +1,20 @@
+.progressBarWrapper{
+    padding-top: 15px;
+    width: 90px;
+    position: relative;
+  
+    .progressbarText{
+      top: 0;
+      left: 0;
+      // right: unset;
+      font-weight: 600;
+      font-size: 14px;
+      color: #455058;
+      position: absolute; 
+      right: 0px; 
+      // top: 20px; 
+      padding: 0px; 
+      margin: 0px;
+
+    }
+  }

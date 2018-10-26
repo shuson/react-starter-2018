@@ -7,7 +7,7 @@ const addons = (/* string | string[] */ addonsArg) => {
     .filter(Boolean); // If addons is undefined, filter it out
 
   return addons.map(addonName =>
-    require(`./config/addons/webpack.${addonName}.js`)
+    require(`./addons/webpack.${addonName}.js`)
   );
 };
 

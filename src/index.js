@@ -10,15 +10,14 @@ import deepForceUpdate from 'react-deep-force-update';
 import { createBrowserHistory } from 'history'
 import configureStore from './redux/store/configureStore';
 import sagas from './sagas';
-import App from './pages'
+import App from './layouts'
 
 import './styles/global.scss';
 
 FastClick.attach(document.body);
 const container = document.getElementById('app');
-
-const history = createBrowserHistory()
 let initialState = {}
+const history = createBrowserHistory()
 const { persistor, store } = configureStore(initialState, history);
 
 store.runSaga(sagas);

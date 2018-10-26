@@ -4,10 +4,11 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {push } from "connected-react-router"
 import RedBox from 'redbox-react'
-import Topbar from "../components/Topbar"
-import Sidebar from '../components/Sidebar'
+import Topbar from "./Topbar"
+import Sidebar from './Sidebar'
+import Footbar from './Footbar'
 
-import {appRoutes } from '../routes'
+import {appRoutes } from '../routes'  
 
 import style from './index.scss'
 
@@ -78,6 +79,7 @@ class App extends React.Component {
         <div className={style.routedContent}>
           {appRoutes()}
         </div>
+        <Footbar />
       </div>
     </div>
   }
