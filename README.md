@@ -56,3 +56,5 @@ $ yarn generate
     2.4.1 ```./src/pages/containers/``` contains individual redux actions within a page<br />
   2.5 ```./sagas, ./services, ./styles``` are name revealing.<br />
 
+To be done:
+
